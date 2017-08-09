@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  #Homepage
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #About Page
+  get '/about', to: 'pages#about'
+  #Contact Page
+  get '/contact', to: 'pages#contact'
+
 end
