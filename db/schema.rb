@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808220621) do
+ActiveRecord::Schema.define(version: 20170809002957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.string "model"
+    t.string "manufacturer"
+    t.string "car_type"
+    t.string "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collectibles", force: :cascade do |t|
+    t.string "competition_car"
+    t.integer "mileage"
+    t.integer "owners"
+    t.string "authenticity_certificate"
+    t.string "service_history"
+    t.string "color"
+    t.string "condition"
+    t.string "gearbox"
+    t.string "drive"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "car_id"
+    t.index ["car_id"], name: "index_collectibles_on_car_id"
+    t.index ["user_id"], name: "index_collectibles_on_user_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string "method"
+    t.string "seller"
+    t.string "sale_price"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "car_id"
+    t.index ["car_id"], name: "index_sales_on_car_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
