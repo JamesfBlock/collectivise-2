@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   def contact      # GET /contact
   end
 
+  def cars      # GET /cars
+    @cars = Car.all
+  end
+
 end

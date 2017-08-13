@@ -1,0 +1,38 @@
+<%= simple_form_for(@collectible) do |f| %>
+  <div class="col-lg-12">
+    <%= f.association :car, collection: Car.all, prompt: "Choose car" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :competition_car, collection: ['N/A', 'No', 'Yes'], prompt: "Select" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :mileage, collection: [ 'Delivery Miles', '< 1000', '< 5000' , '5000-10,000', '10,000 - 15,000', '15,000 - 20,000', '20,000 - 25,000', '25,000 - 35,000', '35,000 - 50,000', '50,000 +'], prompt: "Select Milage" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :owners, collection: 1..10, prompt: "Select" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :color, collection: ["Beige", "Black", "Blue", "Brown", "Gold", "Green", "Grey", "Orange", "Purple", "Red", "White", "Yellow", "Other"], prompt: "Select" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :condition, collection: ["New", "Original Condition", "Restoration Project", "Restorted", "Used", "Used With Guarentee"], prompt: "Select" %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.input :gearbox, collection: ["Automatic", "Manual", "Semi-Automatic", "Other", "N/A"], prompt: "Select" %>
+  </div>
+  <div class="col-lg-12">
+    <%= f.input :service_history, collection: ["Full","Partial","None"], as: :radio_buttons %>
+  </div>
+  <div class="col-lg-12">
+    <%= f.input :drive, collection: ["LHD", "RHD", "Center", "Other"], prompt: "Select" %>
+  </div>
+  <div class="col-lg-12">
+    <%= f.input :value %>
+  </div>
+  <div class="col-lg-12">
+    <%= f.input :collectible_image, label: 'Car Photo', as: :attachinary %>
+  </div>
+  <div class="col-lg-12">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="container">
+   <% @collectibles.each do |c| %>
+    <div class="no-margin col-lg-4 col-md-6 col-xs-12">
+    <%= render 'users/card', collectible: c %>
+    </div>
+  <% end %>
+</div>
