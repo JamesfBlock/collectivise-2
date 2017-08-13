@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>All Cars</h1>
+  <% @cars.each do |car| %>
+    <%= link_to car.manufacturer + "," + car.model, car_path(car) %>
+    <br>
+  <% end %>
+</div>

@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+
+.home-banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-image: url("home-banner.jpg");
+  background-size: cover;
+  background-position: bottom;
+  height: 500px;
+  p {
+    font-size: 14px;
+    color: white;
+    padding: 0px 100px;
+  }
+  h1 {
+    font-size: 45px;
+    color: #009EE6;
+    font-weight: 300;
+  }
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  padding: 0px 100px;
+  background: #009EE6;
+  color: white;
+  height: 400px;
+  text-align: center;
+  i {
+    font-size: 100px;
+  }
+  p {
+    font-size: 12px;
+    padding: 0px 50px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+
+.about-us {
+  padding-top: 30px;
+  text-align: center;
+
+  .thick-line {
+    height: 5px;
+    background-color: #009fe3;
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 30px;
+    color: #009fe3;
+    font-weight: 800;
+  }
+  p {
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+    letter-spacing: 2px;
+    font-weight: 200;
+  }
+}
+
+.new {
+  background-color: #009fe3;
+  height: 100px;
+}

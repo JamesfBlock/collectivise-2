@@ -1,0 +1,17 @@
+<div class="container no-margin">
+  <div class="user" style="padding-top: 50px; ">
+    <h1>About me</h1>
+    <%= cl_image_tag(@user.get_profile_picture) %>
+    <%= @user.full_name %> </p><br>
+
+  </div>
+  <div>
+  <div class="no-margin">
+    <h1>Vehicles</h1><%= link_to "Add New", new_collectible_path, class: "btn btn-primary" %></div>
+  </div>
+  <% @collectibles.each do |c| %>
+    <div class="no-margin col-lg-4 col-md-6 col-xs-12">
+    <%= render 'card', collectible: c %>
+    </div>
+  <% end %>
+</div>

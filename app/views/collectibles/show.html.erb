@@ -1,0 +1,24 @@
+<div class="container padding-top">
+  <% if @collectible.collectible_image %>
+    <%= cl_image_tag(@collectible.collectible_image.path, width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <p>No Image</p>
+  <% end %>
+  <h1><%= @collectible.find_car %></h1>
+  <p>Owner: <%= link_to @collectible.user.full_name, user_path(@owner) %></p>
+</div>
+<div class="container white-box">
+  <p>Competion Car: <%= @collectible.competition_car %></p>
+  <p>Mileage: <%= @collectible.mileage %></p>
+  <p>Owners: <%= @collectible.owners %></p>
+  <p>Service History: <%= @collectible.service_history %></p>
+  <p>Color: <%= @collectible.color %></p>
+  <p>Condition: <%= @collectible.condition %></p>
+  <p>Gearbox: <%= @collectible.gearbox %></p>
+  <p>Drive: <%= @collectible.drive %></p>
+  <p>Value: <%= @collectible.value %></p>
+</div>
+
+<div class="container">
+  <%= link_to "Delete", collectible_path(@collectible), class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" }, method: :delete %>
+</div>

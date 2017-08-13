@@ -1,0 +1,12 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=cl_image_path(collectible.find_image) %> );">
+  <div class="card-category"><%= collectible.user.full_name %></div>
+  <div class="card-description">
+    <h2>
+      <% id = collectible.car_id %>
+      <%= collectible.find_car %>
+    </h2>
+    <p><%= collectible.find_year(id) %></p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <a class="card-link" href="<%= collectible_path(collectible) %>" ></a>
+</div>

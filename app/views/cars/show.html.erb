@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Car Page</h1>
+  <br>
+  <p>Manufacturer: <%= @car.manufacturer %></p>
+  <p>Model: <%= @car.model %></p>
+  <p>Most Recent Sale Price: £100000</p>
+
+
+  <div>
+    <h2>Owners</h2>
+    <% if @car.users.count != 0 %>
+      <% @car.collectibles.each do |c| %>
+        <%= link_to c.user.full_name, collectible_path(c) %>
+        <br>
+      <% end %>
+    <% else %>
+      <p>We currently have no <%= @car.model %>'s on our platform</p>
+    <% end %>
+  </div>
+
+  <div>
+    <h2>Recent Sales</h2>
+    <% if @car.sales.count != 0 %>
+
+      <% @car.sales.each_with_index do |s, i| %>
+        <p><%= i+1 %>) <%= s.method %>, <%= s.seller %>, <%= s.sale_price %></p>
+      <% end %>
+    <% else %>
+      <p>Sorry, there is currently no sales data for this car</p>
+    <% end %>
+  </div>
+</div>
+
